@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+button,
+input {
+  border: 0;
+  outline: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+:root {
+  --grey: #5f6368;
+  --gmailgrey: rgba(235, 235, 235, 0.877);
+  --lgrey: rgba(170, 170, 170, 0.205);
+  --lgrey-secondary: rgba(170, 170, 170, 0.13);
+  --gmailInboxText: #d93025;
+  --gmailInboxBackground: rgba(216, 55, 55, 0.123);
+  --meetsBold: #202124;
+}
