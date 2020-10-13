@@ -280,6 +280,10 @@ export default {
     a {
       font-size: 0.875rem;
     }
+
+    a {
+      color: #1155cc;
+    }
   }
 }
 </style>
