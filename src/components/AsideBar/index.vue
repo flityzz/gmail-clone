@@ -13,5 +13,8 @@ export default {
 <style>
     .aside-container{
         grid-area: AB;
+        background-color: #fff;
+        z-index: 20;
+        border-left: solid 1px var(--lgrey);
     }
 </style>

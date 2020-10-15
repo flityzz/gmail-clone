@@ -98,10 +98,12 @@ export default {
 
 <style scoped lang="scss">
 .email-menu-container {
+  margin-top: 65px;
   grid-area: EM;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  position: fixed;
 
   &:hover .resize-button {
     transition: 0.1s;
@@ -269,7 +271,6 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     img {
       margin: 12px 0 12px 0;
       width: 80px;

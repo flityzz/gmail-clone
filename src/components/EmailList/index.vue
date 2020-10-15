@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="emails">
-        <Email />
+        <Email v-for="em in 5" :key="em.id"/>
       </div>
 
       <div class="todas-as-demais">
@@ -57,7 +57,7 @@
       </div>
 
       <div class="emails">
-        <Email />
+        <Email v-for="em in 25" :key="em.id"/>
       </div>
     </div>
   </div>
@@ -90,14 +90,17 @@ export default {
   flex-direction: column;
 
   .email-list-actions {
-    height: 48px;
-
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: solid 1px var(--lgrey);
+    border-top: solid 1px var(--lgrey);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: solid 1px var(--gmailgrey);
-
+    
     .icon-box,
     .icon-menu-down,
     .icon-refresh,
@@ -130,6 +133,10 @@ export default {
     justify-content: space-between;
     border-bottom: solid 1px var(--lgrey);
     padding: 5px 0 5px 0;
+  }
+
+  .nao-lidas {
+    padding-top: 55px;
   }
 
   .title-wrapper {

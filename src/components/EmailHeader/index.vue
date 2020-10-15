@@ -48,10 +48,14 @@ export default {
     .email-header-container{
         grid-area: EH;
         display: flex;
+        z-index: 30;
         flex-direction: row;
         align-items: center;
         border: solid 1px var(--gmailgrey);
-        padding: 31px 22px 31px 22px;
+        padding: 4px 22px 10px 22px;
+        width: 100vw;
+        position: fixed;
+        background-color: #fff;
         
     .header-menu{
         display: flex;
