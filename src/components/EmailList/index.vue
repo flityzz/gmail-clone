@@ -17,7 +17,7 @@
               alt="arrow"
             />
           </div>
-          <div class="title">Não lidas</div>
+          <div class="title" v-on:click="handleClickNotReaded">Não lidas</div>
         </div>
 
         <div class="info">
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="emails">
+      <div class="emails" v-if="this.isNotReadedClicked">
         <Email v-for="em in 5" :key="em.id"/>
       </div>
 
@@ -42,7 +42,7 @@
               alt="arrow"
             />
           </div>
-          <div class="title">Todas as demais</div>
+          <div class="title" v-on:click="handleClickAllEmails">Todas as demais</div>
         </div>
 
         <div class="info">
@@ -56,9 +56,10 @@
         </div>
       </div>
 
-      <div class="emails">
-        <Email v-for="em in 25" :key="em.id"/>
+      <div class="emails" v-if="this.isAllEmailsClicked">
+        <Email isReaded v-for="em in 25" :key="em.id"/>
       </div>
+
     </div>
   </div>
 </template>
@@ -72,6 +73,12 @@ import More from "vue-material-design-icons/DotsVertical";
 import Email from "./Email";
 
 export default {
+  data: function(){
+    return {
+      isNotReadedClicked: true,
+      isAllEmailsClicked: true
+    }
+  },
   components: {
     MenuDown,
     CheckBox,
@@ -79,6 +86,19 @@ export default {
     More,
     Email,
   },
+  methods: {
+    handleClickNotReaded(){
+      return this.isNotReadedClicked = this.isNotReadedClicked == true ? false : true
+    },
+
+    handleClickAllEmails(){
+      return this.isAllEmailsClicked = this.isAllEmailsClicked == true ? false : true
+    }
+  },
+
+  created(){
+    console.log(this.isBoxClicked)
+  }
 };
 </script>
 

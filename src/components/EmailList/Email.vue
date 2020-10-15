@@ -1,5 +1,5 @@
 <template>
-  <div class="email-wrapper">
+  <div class="email-wrapper" :class="{ isReaded: isReaded }">
     <div class="icons">
       <div class="icon-box">box</div>
       <div class="icon-star">star</div>
@@ -10,9 +10,14 @@
 
     <div class="body">
       <div class="header">
-        <strong>Isso é um cabeçalho do email</strong>
+        <strong :class="{ isReaded: isReaded }"
+          >Isso é um cabeçalho do email</strong
+        >
         <div class="separator">-</div>
-        <p>isso é a mensagem do email</p>
+        <p>
+          Isso é a mensagem do email
+          BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlavadasdadasdasdadsadasdadadadadadadadasdadasda
+        </p>
       </div>
 
       <div class="time">20:06</div>
@@ -21,7 +26,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    isReaded: Boolean,
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -67,7 +76,25 @@ export default {};
     .header {
       display: flex;
       flex-direction: row;
+
+      p {
+        width: 600px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
+
+    .separator {
+      margin: 0 10px 0 10px;
+    }
+  }
+}
+
+.isReaded {
+  background-color: var(--gmailbody);
+  strong {
+    font-weight: normal;
   }
 }
 </style>
