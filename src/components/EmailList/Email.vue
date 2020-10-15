@@ -1,9 +1,9 @@
 <template>
   <div class="email-wrapper" :class="{ isReaded: isReaded }">
     <div class="icons">
-      <div class="icon-box">box</div>
-      <div class="icon-star">star</div>
-      <div class="icon-mark">mark</div>
+      <div class="icon-box"><CheckBox :size="21" /></div>
+      <div class="icon-star"><StarIcon :size="21" /></div>
+      <div class="icon-mark"><IconMark :size="21" /></div>
     </div>
 
     <div class="title"><strong>Titulo do Email</strong></div>
@@ -26,9 +26,17 @@
 </template>
 
 <script>
+import CheckBox from "vue-material-design-icons/CheckboxBlankOutline";
+import StarIcon from "vue-material-design-icons/StarOutline";
+import IconMark from "vue-material-design-icons/LabelOutline";
 export default {
   props: {
     isReaded: Boolean,
+  },
+  components: {
+    CheckBox,
+    StarIcon,
+    IconMark,
   },
 };
 </script>
@@ -48,6 +56,8 @@ export default {
   &:hover {
     -webkit-box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, 0.122);
     box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, 0.274);
+    border-left: solid 1px var(--gmailgrey);
+    border-right: solid 1px var(--gmailgrey);
   }
 
   .icons {
@@ -55,12 +65,25 @@ export default {
     flex-direction: row;
 
     > div {
-      padding: 0px 10px 0 12px;
+      padding: 0px 0 0 12px;
+    }
+
+    .icon-box,
+    .icon-star,
+    .icon-mark {
+      filter: invert(86%) sepia(1%) saturate(89%) hue-rotate(314deg)
+        brightness(90%) contrast(98%);
+
+        &:hover{
+          filter: invert(0%) sepia(95%) saturate(47%) hue-rotate(254deg)
+          brightness(100%) contrast(100%);
+        }
     }
   }
 
   .title {
     display: flex;
+    margin-left: 20px;
     flex-direction: row;
     justify-content: flex-start;
     width: 200px;
