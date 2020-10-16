@@ -24,4 +24,4 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Deploy 
-gmail-clonevuejs.netlify.app
+https://gmail-clonevuejs.netlify.app/
